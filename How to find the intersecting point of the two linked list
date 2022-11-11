@@ -1,0 +1,47 @@
+Link:
+https://leetcode.com/problems/intersection-of-two-linked-lists/
+
+
+Solution:
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+        # let solve this code in the form of intutive approach
+        # copy the head of the list so that the head will not be altered
+        # basically this is an itutive approach which takes O(m+n) as time complexity
+        # O(1) as space complexity
+        # there are about 2 approach.
+        # approach 1
+        # 1.take the length of the nodes and subtract them .
+        # 2.have the short list pointer at head and move the long list pointer to the differece place 
+        # 3.by doing so we could get the pointers in same position to compare
+        #-----------------------------------
+        #approach 2
+        #1.traverse the pointer through the entire list (both the pointers)
+        #2.If any pointer hits the null, assign the head of another list to this 
+        #3. Repeat this process untill two pointers have equal values
+        # If it has intersection point, it meets with the difference of their runs.
+        
+        ## approach 2 is followed which has O(m+n) as time complexity and O(1) as space complexity
+        
+        l1,l2=headA,headB
+        
+        while l1!=l2:
+            if l1:
+                l1=l1.next
+            else:
+                l1=headB
+            if l2:
+                l2=l2.next
+            else:
+                l2=headA
+        
+        return l1
+            
+        
