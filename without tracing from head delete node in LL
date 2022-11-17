@@ -13,6 +13,7 @@ class Solution:
         # Initial Linked List
         # Update temp node with next node details
         # Update temp node next pointer with next node next pointer
+        # deleting the node from memory
         # 4---------5---------1------------2
         #        tempNode
         
@@ -47,7 +48,8 @@ class Solution:
         
         
         
-        # this is another approch which is straight forward that follows the above 
+        # this is another approch which is straight forward that follows the above logic but it does not delete the nodes memory
+        
         node.val=node.next.val
         node.next=node.next.next
         
