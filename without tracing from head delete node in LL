@@ -1,0 +1,49 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+        # Initial Linked List
+        # Update temp node with next node details
+        # Update temp node next pointer with next node next pointer
+        # 4---------5---------1------------2
+        #        tempNode
+        
+        # 4---------5---------1------------2
+        #        tempNode  nextNode
+        
+        nextNode=node.next
+        # 4---------1---------1------------2
+        #        tempNode  nextNode
+        
+        node.val=nextNode.val
+        # 4---------1---------1------------2
+        #        tempNode  nextNode        |
+        #             |                    |
+        #             |____________________|  
+        
+        node.next=nextNode.next
+        # 4---------1---------1   (None)   2
+        #        tempNode  nextNode        |
+        #             |                    |
+        #             |____________________| 
+        
+        nextNode.next=None
+        # 4---------1------(None) (None)   2
+        #        tempNode  nextNode        |
+        #             |                    |
+        #             |____________________|  
+        
+        del(nextNode)
+        #Time Complexity: O(1) ince only 1 node needs to be updated and we only traverse one node behind.
+        #space Complexity O(1) since we use constant extra space to track the next node.
+        
+
+     
