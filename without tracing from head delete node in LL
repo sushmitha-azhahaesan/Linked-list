@@ -41,7 +41,7 @@ class Solution:
         #        tempNode  nextNode        |
         #             |                    |
         #             |____________________|  
-        
+        # "Delete the given node. Note that by deleting the node, we do not mean removing it from memory." if this is given dont use the below line.
         del(nextNode)
         #Time Complexity: O(1) ince only 1 node needs to be updated and we only traverse one node behind.
         #space Complexity O(1) since we use constant extra space to track the next node.
