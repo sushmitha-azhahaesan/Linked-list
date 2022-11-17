@@ -45,5 +45,11 @@ class Solution:
         #Time Complexity: O(1) ince only 1 node needs to be updated and we only traverse one node behind.
         #space Complexity O(1) since we use constant extra space to track the next node.
         
+        
+        
+        # this is another approch which is straight forward that follows the above 
+        node.val=node.next.val
+        node.next=node.next.next
+        
 
      
