@@ -1,0 +1,29 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev,curr=None,head
+        
+        # we will create a temporary node at the start as prev=None
+        # None--->1--nxt--->2---->3--->4---->5
+        # prev. current 
+        
+        # assign the current address to prev
+        # change the 
+        
+        while curr:
+            # store the current address in a temporary variable
+            nxt=curr.next
+            # assign that address to prev which points the arrow backwards
+            curr.next=prev
+            # move the prev pointer to current 
+            prev=curr
+            # since the current.next is in nxt (current= current.next) traversal occurs
+            curr=nxt
+           # print(prev)
+        return prev  
+            
