@@ -1,0 +1,28 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # One of the approach would be finding the length of the LL and divide by 2 . Then traverse until u reach half then di delete operation . 
+        # but this takes 2 iterations
+        # This is to perform in one iteration
+        # in order to find the middle node of the linked list we can keep 2 pointers
+        # fast and slow were fast traverse couple of places at once and slow traverse on eplace ...when fast hits the null we can delete the middle node.
+        # we have a corner case where if we have only one value fast.next.next wont work as it should have atleast 2 values to hit null
+        
+        if head.next is None:
+            return None
+        
+        fast=head
+        slow=head
+        temp=None
+        
+        while fast and fast.next:
+            temp=slow
+            fast=fast.next.next
+            slow=slow.next
+        temp.next=slow.next 
+        return head
+        
