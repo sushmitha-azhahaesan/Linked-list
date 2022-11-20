@@ -1,0 +1,24 @@
+Uses of linked List:
+
+LL is used in the implementation of stacks and queues
+Image Gallery, we can toggle between images → Doubly Linked list
+Music played  → Doubly Linked list
+Browser (by clicking left and right → to go to prev and next page)  → Doubly Linked list
+Hash map  and hash set – collision can be handled by chaining → Double linked list
+
+
+Arrays Vs linkedList:
+
+Arrays:
+It allocates memory in a contigious manner. If a[7] spaces is required for integer then 7*4===28 bytes will be allocated for as a whole.
+sorting: The elements in array can be ramdomly accessed. a[5] can be accessed as one step at a time.
+Due to this, it has huge efficiency with sorting algorithms.
+deletion: If one node is deleted all the nodes after that has to be shifted ,Time Complexity: O(n)
+
+Linked List:
+where as in LL ,memory is allocated as chunk . If one node enters (only 8 bytes) ,then the memory for that node is alone allocated as chunk.
+we can use the chunk memory available.
+U have to traverse all the nodes at worst caase to reach a particular node.
+Deletion : In O(1) deletion operation can be done if we r at the nodes location. Just reassigning of address. 
+
+
