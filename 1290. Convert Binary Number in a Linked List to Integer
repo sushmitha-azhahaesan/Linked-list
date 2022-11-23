@@ -1,0 +1,70 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+# This problem can be solved in two approaches 
+# 1. to find the length of the linked list , 10110111
+#                                            22222222 power 76543210 ,add the number with, binary value*multiply 2 with power length of the list -1
+# 
+class Solution:
+    def getDecimalValue(self, head: ListNode) -> int:
+        
+        current=head
+        current1=head
+        result=0
+        i=0
+        while current:
+            i+=1
+            current=current.next
+ 
+        
+        while current1:
+            result+=current1.val*(2**(i-1))
+            i-=1
+            current1=current1.next
+        return result    
+
+=================================================================================================
+# 2. by using in built function int(number,2), whole binary number will be passed as an integer
+class Solution:
+    def getDecimalValue(self, head: ListNode) -> int:
+        current=head
+        result=""
+        
+        while current:
+            result+=str(current.val)
+            current=current.next
+        return int(result,2)     
+ ================================================================================================
+ # the 3 approach is 
+ Loop	Character	Operation	  Result
+1	    ‘1’	        1	          1
+2	    ‘2’	        (1x10) + 2	  12
+3	    ‘3’	        (12*10) + 3	  123
+
+Note: Operation is always the previous multiplied by the counting system. In this this, we're doing decimal so x10. 
+If we were doing hex, it'll x16. Binary will be x 2.
+
+Using this logic, let’s come back to binary. It’s exactly the same except for instead of multiplying by 10 when we encounter the next digit, 
+we multiply by 2. So If we have a LinkeList 1 -> 0 -> 1 and apply the same logic, this is how it'll be.
+
+Loop	Character	Operation	  Result
+1	    ‘1’	        1	          1
+2	    ‘0’	        (1x2) + 0	  2
+3	    ‘1’	        (2*2) + 1	  5
+
+public int getDecimalValue(ListNode head) {
+       int sum1 = 0;
+       current=head
+        
+        while current:
+            sum1 *= 2;
+            sum1 += current.val
+            current = current.next
+        
+        return sum1
+    }
+            
+        
