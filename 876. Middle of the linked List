@@ -7,6 +7,26 @@ class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         # One of the approach would be finding the length of the LL and divide by 2 . Then traverse until u reach half then di delete operation . 
         # but this takes 2 iterations
+        #This approach involves extra loop
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        current=head
+        current1=head
+        i=0
+        # this loop is to get the length
+        while current:
+            i+=1
+            current=current.next
+            
+        n=i/2
+        while n>=1:
+            current1=current1.next
+            n-=1
+            
+        
+        return current1 
+        
+        =========================================================================================
         
         # to traverse to the middle of the linked list 
         # have 2 pointers 
